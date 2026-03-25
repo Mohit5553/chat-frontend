@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-slate-950: #090e1a;
+  --color-slate-900: #111827;
+  --color-slate-800: #1f2937;
+  --color-slate-400: #94a3b8;
+  --color-indigo-500: #6366f1;
+  --color-indigo-600: #4f46e5;
+}
+
+@layer base {
+  :root {
+    --bg: #f8fafc;
+    --sidebar-bg: #090e1a;
+    --accent: #6366f1;
+    --card-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05), 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+  }
+
+  body {
+    @apply antialiased text-slate-900 bg-slate-50;
+    font-family: "Inter", "Manrope", sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  /* Optional Dark Mode variables */
+  @media (prefers-color-scheme: dark) {
+    body.dark {
+      @apply bg-slate-950 text-slate-50;
+    }
+  }
+
+  .premium-card {
+    @apply bg-white border border-slate-200/60 shadow-[var(--card-shadow)] rounded-[20px] overflow-hidden transition-all duration-300;
+  }
+
+  .small-label {
+    @apply text-[10px] font-black uppercase tracking-[0.15em] text-slate-400;
+  }
+
+  .heading-lg {
+    @apply text-xl font-black tracking-tight text-slate-900;
+  }
+
+  .heading-md {
+    @apply text-sm font-black tracking-normal text-slate-900 uppercase;
+  }
+}
+
+/* Scrollbar Refinement */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #e2e8f0;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #cbd5e1;
+}
+
