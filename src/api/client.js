@@ -2,7 +2,7 @@ const DEFAULT_PROD_API_URL = "https://chat-backend-3pcj.onrender.com";
 const API_BASE = (
   import.meta.env.VITE_API_URL ||
   (import.meta.env.PROD ? DEFAULT_PROD_API_URL : "http://localhost:5000")
-).replace(/\/$/, "");
+).trim().replace(/\/+$/, "");
 
 export async function api(path, options = {}) {
   const token = localStorage.getItem("dashboard_token");
